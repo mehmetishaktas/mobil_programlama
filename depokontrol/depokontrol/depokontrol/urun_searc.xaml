@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="depokontrol.urun_searc">
+    <ContentPage.Content>
+        <StackLayout>
+            <Button Text="QR CODE İLE BULUMA" Clicked="qrcodefound" ></Button>
+            <Label x:Name="id" FontSize="Body" Text="ÜRÜN ID"></Label>
+            <Entry x:Name="urun_id"></Entry>
+            <Label Text="ÜRÜN ADI" FontSize="Body"></Label>
+            <Entry x:Name="urun_adi"></Entry>
+            <Label Text="ÜRÜN ÖZELLİĞİ" FontSize="Body"></Label>
+            <Entry x:Name="urun_ozeligi"></Entry>
+            <Label Text="ÜRÜN ADETİ" FontSize="Body"></Label>
+            <Entry x:Name="urun_adet"></Entry>
+            <Label Text="DEPO" FontSize="Body"></Label>
+            <Entry x:Name="depo"></Entry>
+            <Button Text="BUL" Clicked="bul"></Button>
+            <ListView x:Name="bulma" HasUnevenRows="True" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="30"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Label Text="İD" FontSize="Large" FontAttributes="Bold" Grid.Column="0" Grid.Row="0" TextColor="Red"></Label>
+                                    <Label  Text="{Binding id}" FontSize="Large" FontAttributes="Bold" Grid.Column="0" Grid.Row="1" ></Label>
+                                    <Label Text="ADI" FontSize="Large" FontAttributes="Bold" Grid.Column="0" Grid.Row="2" TextColor="Red"></Label>
+                                    <Label Text="{Binding adi}" FontSize="Large" FontAttributes="Bold" Grid.Column="0" Grid.Row="3"></Label>
+                                    <Label Text="ÖZELLİĞİ" FontSize="Large" FontAttributes="Bold" Grid.Column="0" Grid.Row="4" TextColor="Red"></Label>
+                                    <Label Text="{Binding ozelligi}" FontSize="Large" FontAttributes="Bold" Grid.Column="0" Grid.Row="5"></Label>
+                                    <Label Text="ADETİ" FontSize="Large" FontAttributes="Bold" Grid.Column="0" Grid.Row="6" TextColor="Red"></Label>
+                                    <Label Text="{Binding adet}" FontSize="Large" FontAttributes="Bold" Grid.Column="0" Grid.Row="7"></Label>
+                                    <Label Text="ALIŞ TARİHİ" FontSize="Large" FontAttributes="Bold" Grid.Column="0" Grid.Row="8" TextColor="Red"></Label>
+                                    <Label Text="{Binding tarihi}" FontSize="Large" FontAttributes="Bold" Grid.Column="0" Grid.Row="9"></Label>
+                                    <Label Text="BULUNDUĞU DEPO" FontSize="Large" FontAttributes="Bold" Grid.Column="0" Grid.Row="10" TextColor="Red"></Label>
+                                    <Label Text="{Binding depo}" FontSize="Large" FontAttributes="Bold" Grid.Column="0" Grid.Row="11"></Label>
+                                    <Label Grid.Row="12"></Label>
+                                </Grid>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

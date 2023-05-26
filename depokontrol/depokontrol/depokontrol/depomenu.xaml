@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="depokontrol.depomenu" BackgroundColor="WhiteSmoke">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout  Orientation="Horizontal">
+
+                <Button Text="ÜRÜN EKLEME" BackgroundColor="Transparent" TextColor="Black" TextTransform="Uppercase"  CornerRadius="50" BorderWidth="2" BorderColor="Aqua" Clicked="urun_ekleme" TranslationX="1"></Button>
+                <Label FontAttributes="Bold" Margin="5" > MEHMET İSHAK TAŞ</Label>
+                <Button Text="ÜRÜN BULMA"  CornerRadius="50" BackgroundColor="Transparent" TextColor="Black" BorderWidth="2" BorderColor="Aqua" Clicked="urun_bulma" TranslationX="1" ></Button>
+            </StackLayout>
+            <StackLayout Margin="10">
+                <ListView x:Name="listeleme" HasUnevenRows="True" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                            <ColumnDefinition Width="30"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"></RowDefinition>
+                                            <RowDefinition Height="*"></RowDefinition>
+                                            <RowDefinition Height="*"></RowDefinition>
+                                            <RowDefinition Height="*"></RowDefinition>
+                                            <RowDefinition Height="*"></RowDefinition>
+                                            <RowDefinition Height="*"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Label Text="İD" FontSize="Large" FontAttributes="Bold" Grid.Column="0" Grid.Row="0" TextColor="Red"></Label>
+                                        <Label  Text="{Binding id}" FontSize="Large" FontAttributes="Bold" Grid.Column="0" Grid.Row="1" ></Label>
+                                        <Label Text="ADI" FontSize="Large" FontAttributes="Bold" Grid.Column="0" Grid.Row="2" TextColor="Red"></Label>
+                                        <Label Text="{Binding adi}" FontSize="Large" FontAttributes="Bold" Grid.Column="0" Grid.Row="3"></Label>
+                                        <Label Text="ÖZELLİĞİ" FontSize="Large" FontAttributes="Bold" Grid.Column="0" Grid.Row="4" TextColor="Red"></Label>
+                                        <Label Text="{Binding ozelligi}" FontSize="Large" FontAttributes="Bold" Grid.Column="0" Grid.Row="5"></Label>
+                                        <Label Text="ADETİ" FontSize="Large" FontAttributes="Bold" Grid.Column="0" Grid.Row="6" TextColor="Red"></Label>
+                                        <Label Text="{Binding adet}" FontSize="Large" FontAttributes="Bold" Grid.Column="0" Grid.Row="7"></Label>
+                                        <Label Text="ALIŞ TARİHİ" FontSize="Large" FontAttributes="Bold" Grid.Column="0" Grid.Row="8" TextColor="Red"></Label>
+                                        <Label Text="{Binding tarihi}" FontSize="Large" FontAttributes="Bold" Grid.Column="0" Grid.Row="9"></Label>
+                                        <Label Text="BULUNDUĞU DEPO" FontSize="Large" FontAttributes="Bold" Grid.Column="0" Grid.Row="10" TextColor="Red"></Label>
+                                        <Label Text="{Binding depo}" FontSize="Large" FontAttributes="Bold" Grid.Column="0" Grid.Row="11"></Label>
+                                        <ImageButton Grid.Column="1" Grid.Row="1" Grid.RowSpan="1" WidthRequest="20" Source="https://w7.pngwing.com/pngs/766/581/png-transparent-computer-icons-editing-others.png" CommandParameter="{Binding id}" Clicked="editbutton"></ImageButton>
+                                        <ImageButton Grid.Column="1" Grid.Row="2"  Grid.RowSpan="1" WidthRequest="20" Source="https://ps.w.org/doqrcode/assets/icon-256x256.png?rev=2143781" CommandParameter="{Binding id}" Clicked="qrcodemenu"></ImageButton>
+
+                                        <Label Grid.Row="12"></Label>
+                                    </Grid>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <Label 
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

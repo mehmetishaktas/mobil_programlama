@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="depokontrol.login" BackgroundColor="#d445">
+    <ContentPage.Content>
+        <StackLayout Padding="40" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+            <Entry x:Name="kadi" Placeholder="KULLANICI ADINIZI GİRİNİZ"  TextColor="Wheat" PlaceholderColor="Gray"></Entry>
+            <Entry x:Name="sifre" Placeholder="ŞİFRENİZİ GİRNİZ" IsPassword="True"   TextColor="Wheat" PlaceholderColor="Gray"></Entry>
+            <Button VerticalOptions="Center" Text="Giriş" TextColor="Black" BackgroundColor="Transparent" BorderColor="ForestGreen" BorderWidth="2" CornerRadius="50" Clicked="Button_Clicked"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
